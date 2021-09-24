@@ -921,7 +921,7 @@ $(function () {
       articleMenuHeight = 51,
       menuHeight = 70,
       header = document.querySelector('#header'),
-      logoImg = document.querySelector('.logo > img');
+      logoImg = document.querySelector('.logo > a > img');
 
     var handler = () => {
       var newOffset = window.scrollY || window.pageYOffset;
