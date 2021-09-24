@@ -1,8 +1,13 @@
 <%- partial("_partial/menu", null, {cache: true}) %>
 <div id="container">
     <%- partial("_partial/screen", null, {cache: false}) %>
-    <div id="primary">
+    <div id="primary" class="<% if (theme.homeOnlyShowFirst) { %>onlyOne<% } %>">
         <%- partial('_partial/list', {start: 1}) %>
+    </div>
+    <div class="buttonContainer">
+        <div class="showMoreButton">
+            <a class="showMoreButtonText" href="/archives/" rel="archives">查看更多</a>
+        </div>
     </div>
     <% if (page.total > 1 && page.next_link){ %>
     <div id="pager"><a href="<%- url_for(page.next_link) %>" class="more" data-loading="<%= __('loading') %>" data-load-more="<%= __('load_more') %>"><%= __('load_more') %></a></div>
